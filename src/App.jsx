@@ -1,28 +1,40 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from "./pages/Home"
-import Episodio from "./pages/Episodio"
-import Form from "./pages/Form"
 import Navbar from "./components/Navbar"
+import Home from "./pages/Home"
+import Episodios from "./pages/Episodio"
+import Contacto from "./pages/Form"
 
-function App() {
+export default function App() {
+
   return (
+
     <BrowserRouter>
-      <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/episodios" element={<Episodio />} />
-        <Route path="/contacto" element={<Form />} />
-      </Routes>
-<div className="min-h-screen flex items-center justify-center bg-background">
+      {/* FONDO GRIS */}
 
-      <h1 className="text-5xl font-bold text-naranja">
-        Podcast Cultura
-      </h1>
+      <div className="min-h-screen w-full bg-gray-200 flex justify-center p-6">
 
-    </div>
+        {/* CONTENEDOR BLANCO */}
+
+        <div className="w-full max-w-[2000px] bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl overflow-hidden">
+
+          <Navbar />
+
+          <main className="px-12 py-10">
+
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/episodios" element={<Episodios />} />
+              <Route path="/contacto" element={<Contacto />} />
+            </Routes>
+
+          </main>
+
+        </div>
+
+      </div>
+
     </BrowserRouter>
+
   )
 }
-
-export default App

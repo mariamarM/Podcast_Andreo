@@ -1,4 +1,5 @@
 function Form() {
+
   return (
 
     <div className="flex justify-center items-center min-h-screen">
@@ -22,13 +23,14 @@ function Form() {
           className="border p-3 rounded-lg"
         />
 
-        <button className="bg-primary text-white p-3 rounded-lg">
+        <button className="bg-naranja text-white p-3 rounded-lg">
           Enviar
         </button>
 
       </form>
 
     </div>
+
   )
 }
 

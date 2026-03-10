@@ -1,11 +1,34 @@
+import { Link } from "react-router-dom"
+
 function Navbar() {
+
   return (
-    <div className="bg-background text-text">
-      <section className="min-h-screen flex flex-col justify-center items-center text-center">
-        <h1 className="text-5xl font-bold">Navbar </h1>
-      </section>
-    </div>
-  );
+
+    <nav className="flex justify-between items-center px-8 py-4 m-4 bg-white rounded-2xl shadow-sm">
+
+      <h1 className="text-2xl font-bold text-naranja">
+        Maria Andreo
+      </h1>
+
+      <div className="flex gap-6 text-gray-600">
+
+        <Link to="/" className="hover:text-black transition">
+          Home
+        </Link>
+
+        <Link to="/episodios" className="hover:text-black transition">
+          Episodios
+        </Link>
+
+        <Link to="/contacto" className="hover:text-black transition">
+          Participa
+        </Link>
+
+      </div>
+
+    </nav>
+
+  )
 }
 
-export default Navbar;
+export default Navbar
