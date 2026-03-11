@@ -24,6 +24,14 @@ html, body, #root {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* styles.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -35,8 +43,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+
   min-height: 100vh;
 }
 
