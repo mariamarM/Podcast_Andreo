@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import ParallaxBlob from "../components/ParallaxBlob"
 import EpisodeCard from "../components/EpisodeCard"
+import ScrollImages from "../components/ScrollImages";
 
 export default function Home() {
 
@@ -78,22 +79,7 @@ export default function Home() {
 
           {/* CARD 3 */}
 
-          <motion.div
-            initial={{opacity:0,y:40}}
-            animate={{opacity:1,y:0}}
-            transition={{delay:0.4}}
-            className="bg-naranja/20 rounded-2xl p-6"
-          >
-
-            <h3 className="font-semibold mb-2">
-              Frecuencia
-            </h3>
-
-            <p className="text-sm">
-              Nuevo episodio cada semana
-            </p>
-
-          </motion.div>
+        <ScrollImages />
 
           {/* CARD GRANDE */}
 
@@ -116,17 +102,23 @@ export default function Home() {
           </motion.div>
 
           {/* CARD PEQUEÑA */}
-
-          <motion.div
+  <motion.div
             initial={{opacity:0,y:40}}
             animate={{opacity:1,y:0}}
-            transition={{delay:0.6}}
-            className="bg-gray-100 rounded-2xl p-6 flex items-center justify-center"
+            transition={{delay:0.4}}
+            className="bg-naranja/20 rounded-2xl p-6"
           >
 
-            🎧
+            <h3 className="font-semibold mb-2">
+              Frecuencia
+            </h3>
+
+            <p className="text-sm">
+              Nuevo episodio cada semana
+            </p>
 
           </motion.div>
+        
 
         </div>
 
