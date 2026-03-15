@@ -11,28 +11,24 @@ export default function ParallaxBlob({
   const [position,setPosition] = useState({x:0,y:0})
   const [scrollOffset,setScrollOffset] = useState(0)
 
-  useEffect(()=>{
+useEffect(()=>{
+  let frame
+  let time = 0
 
-    let frame
-    let time = 0
+  const animate = () => {
+    time += 0.01
 
-    const animate = () => {
+    // Velocidades diferentes en X e Y
+    const x = Math.sin(time * 0.5) * 50  // Más lento en X
+    const y = Math.cos(time * 1.5) * 40  // Más rápido en Y
 
-      time += 0.01
+    setPosition({x, y})
+    frame = requestAnimationFrame(animate)
+  }
 
-      const x = Math.sin(time) * 40
-      const y = Math.cos(time * 1.3) * 40
-
-      setPosition({x,y})
-
-      frame = requestAnimationFrame(animate)
-    }
-
-    animate()
-
-    return () => cancelAnimationFrame(frame)
-
-  },[])
+  animate()
+  return () => cancelAnimationFrame(frame)
+},[])
 
   useEffect(()=>{
 
@@ -49,7 +45,7 @@ export default function ParallaxBlob({
   return(
 
     <div
-      className={`absolute ${top} ${left} ${size} ${color} opacity-20 rounded-full blur-3xl -z-10`}
+      className={`absolute ${top} ${left} ${size} ${color} opacity-50 rounded-full blur-3xl -z-10`}
       style={{
         transform:`translate(${position.x}px, ${position.y + scrollOffset}px)`
       }}

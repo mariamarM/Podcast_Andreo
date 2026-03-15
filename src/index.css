@@ -83,3 +83,74 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+@keyframes lavaLamp {
+  0%, 100% {
+    border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
+    transform: scale(1.2) rotate(15deg) translate(0, 0);
+  }
+  25% {
+    border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%;
+    transform: scale(1.25) rotate(12deg) translate(2%, -2%);
+  }
+  50% {
+    border-radius: 70% 30% 50% 50% / 30% 70% 40% 60%;
+    transform: scale(1.15) rotate(18deg) translate(-2%, 3%);
+  }
+  75% {
+    border-radius: 50% 50% 60% 40% / 50% 40% 60% 50%;
+    transform: scale(1.22) rotate(10deg) translate(3%, -1%);
+  }
+}
+
+@keyframes lavaLampReverse {
+  0%, 100% {
+    border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+    transform: scale(1.1) rotate(-10deg) translate(0, 0);
+  }
+  25% {
+    border-radius: 50% 50% 70% 30% / 40% 70% 30% 60%;
+    transform: scale(1.15) rotate(-8deg) translate(-3%, 2%);
+  }
+  50% {
+    border-radius: 30% 70% 40% 60% / 70% 30% 60% 40%;
+    transform: scale(1.05) rotate(-12deg) translate(2%, -3%);
+  }
+  75% {
+    border-radius: 60% 40% 50% 50% / 50% 50% 40% 60%;
+    transform: scale(1.12) rotate(-7deg) translate(-1%, 4%);
+  }
+}
+
+@keyframes lavaLampSlow {
+  0%, 100% {
+    border-radius: 80% 20% 60% 40% / 50% 50% 50% 50%;
+    transform: scale(1.3) translate(0, 0);
+  }
+  33% {
+    border-radius: 60% 40% 80% 20% / 40% 60% 40% 60%;
+    transform: scale(1.28) translate(4%, -3%);
+  }
+  66% {
+    border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%;
+    transform: scale(1.32) translate(-3%, 5%);
+  }
+}
+
+@keyframes lavaLampMedium {
+  0%, 100% {
+    border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%;
+    transform: scale(1.4) translate(0, 0);
+  }
+  25% {
+    border-radius: 70% 30% 50% 50% / 30% 70% 40% 60%;
+    transform: scale(1.38) translate(-4%, 3%);
+  }
+  50% {
+    border-radius: 50% 50% 70% 30% / 40% 50% 50% 60%;
+    transform: scale(1.42) translate(5%, -2%);
+  }
+  75% {
+    border-radius: 60% 40% 40% 60% / 50% 40% 60% 50%;
+    transform: scale(1.36) translate(-2%, -4%);
+  }
+}
