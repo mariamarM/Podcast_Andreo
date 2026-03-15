@@ -7,7 +7,7 @@ import Contacto from "./pages/Form";
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="h-[1000px] w-full bg-gray-200 flex justify-center p-6">
+      <div className="h-[830px] w-full bg-gray-200 flex justify-center p-6">
         <div className="w-full max-w-[2000px] bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl flex flex-col">
           
           <Navbar />
