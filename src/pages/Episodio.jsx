@@ -10,7 +10,7 @@ const temporadas = {
         id: 1,
         titulo: 'Solo en Casa (1990)',
         duracion: '1h 24min',
-        audio: '/multimedia/audio/P1-SoloEnCasa.mp4',
+        audio: '/multimedia/audio/P1-SoloEnCasa.mp3',
         pelicula: {
           año: 1990,
           datosCuriosos: [
