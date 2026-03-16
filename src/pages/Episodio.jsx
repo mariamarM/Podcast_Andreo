@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PodcastTranscriber from '../components/PodcastTranscriber';
 
@@ -73,50 +73,50 @@ const temporadas = {
   }
 };
 
+// COMPONENTE DE BLOBS CON MOVIMIENTO MEJORADO
 const LavaLampBlobs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none">
+    {/* Blob 1 - Morado (se mueve izquierda-derecha) */}
     <div 
       className="absolute -top-20 -right-20 w-[600px] h-[800px] md:w-[800px] md:h-[1000px] opacity-4"
       style={{
         background: 'radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.6) 0%, transparent 70%)',
         filter: 'blur(60px)',
-        transform: 'scale(1.2) rotate(15deg)',
         borderRadius: '60% 40% 70% 30% / 40% 60% 30% 70%',
-        animation: 'lavaLamp 25s ease-in-out infinite'
+        animation: 'floatLeftRight 12s ease-in-out infinite'
       }}
     />
     
-   
+    {/* Blob 2 - Naranja (se mueve derecha-izquierda) */}
     <div 
       className="absolute -bottom-20 -left-20 w-[500px] h-[700px] md:w-[700px] md:h-[900px] opacity-3"
       style={{
         background: 'radial-gradient(circle at 70% 50%, rgba(249, 115, 22, 0.5) 0%, transparent 70%)',
         filter: 'blur(60px)',
-        transform: 'scale(1.1) rotate(-10deg)',
         borderRadius: '70% 30% 50% 50% / 30% 60% 40% 70%',
-        animation: 'lavaLampReverse 20s ease-in-out infinite'
+        animation: 'floatRightLeft 15s ease-in-out infinite'
       }}
     />
     
+    {/* Blob 3 - Morado claro (movimiento diagonal) */}
     <div 
       className="absolute top-1/3 left-1/4 w-[400px] h-[600px] opacity-3"
       style={{
-        background: 'radial-gradient(circle at 50% 30%, rgba(139, 92, 246,) 0%, transparent 70%)',
+        background: 'radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.4) 0%, transparent 70%)',
         filter: 'blur(70px)',
-        transform: 'scale(1.3)',
         borderRadius: '80% 20% 60% 40% / 50% 50% 50% 50%',
-        animation: 'lavaLampSlow 30s ease-in-out infinite'
+        animation: 'floatDiagonal 18s ease-in-out infinite'
       }}
     />
     
+    {/* Blob 4 - Naranja claro (movimiento circular grande) */}
     <div 
       className="absolute bottom-1/3 right-1/4 w-[300px] h-[500px] opacity-4"
       style={{
         background: 'radial-gradient(circle at 40% 60%, rgba(249, 115, 22, 0.3) 0%, transparent 70%)',
         filter: 'blur(80px)',
-        transform: 'scale(1.4)',
         borderRadius: '40% 60% 30% 70% / 60% 30% 70% 40%',
-        animation: 'lavaLampMedium 22s ease-in-out infinite'
+        animation: 'floatBigCircle 20s ease-in-out infinite'
       }}
     />
   </div>
@@ -126,10 +126,24 @@ function Episodios() {
   const [selectedEp, setSelectedEp] = useState(null);
   const [temporadaActiva, setTemporadaActiva] = useState('temp1');
   const [showTranscriber, setShowTranscriber] = useState(false);
+  
+  // Referencia para el componente PodcastTranscriber
+  const transcriberRef = useRef();
 
   const handleSelectEpisodio = (episodio) => {
     setSelectedEp(episodio);
     setShowTranscriber(false);
+  };
+
+  // Función para activar transcripción AUTOMÁTICAMENTE
+  const handleActivarTranscripcion = () => {
+    setShowTranscriber(true);
+    // Pequeño timeout para asegurar que el componente se montó
+    setTimeout(() => {
+      if (transcriberRef.current) {
+        transcriberRef.current.startTranscription();
+      }
+    }, 100);
   };
 
   const episodiosActuales = temporadas[temporadaActiva].episodios;
@@ -154,6 +168,7 @@ function Episodios() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           
+          {/* COLUMNA IZQUIERDA - LISTA DE EPISODIOS */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -207,7 +222,6 @@ function Episodios() {
                       }`}
                     >
                       <div className="flex items-start gap-4">
-                        {/* Número de episodio con glass effect y borde blanco */}
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium backdrop-blur-sm border-2 transition-all duration-200 ${
                           selectedEp?.id === ep.id
                             ? 'bg-gradient-to-r from-naranja to-lila text-white border-white/90 shadow-lg'
@@ -250,14 +264,14 @@ function Episodios() {
             </div>
           </motion.div>
 
-          {/* COLUMNA DERECHA */}
+          {/* COLUMNA DERECHA - TRANSCRIPCIÓN Y FICHA TÉCNICA */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
             className="space-y-6 mt-[-10%]"
           >
-            {/* Panel de Transcripción con glass effect y bordes blancos marcados */}
+            {/* Panel de Transcripción */}
             <div className="bg-white/30 backdrop-blur-xl rounded-3xl border-2 border-white/70 shadow-xl overflow-hidden">
               <div className="p-6 border-b-2 border-white/70">
                 <div className="flex items-center justify-between">
@@ -266,7 +280,7 @@ function Episodios() {
                   </h2>
                   {selectedEp && (
                     <button
-                      onClick={() => setShowTranscriber(!showTranscriber)}
+                      onClick={handleActivarTranscripcion}
                       className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm border-2 ${
                         showTranscriber
                           ? 'bg-gradient-to-r from-naranja to-lila text-white border-white/90 shadow-lg'
@@ -283,9 +297,12 @@ function Episodios() {
                 {selectedEp ? (
                   showTranscriber ? (
                     <div className="space-y-4">
-                      
                       <div className="bg-white/40 backdrop-blur-sm rounded-2xl border-2 border-white/70 p-4">
-                        <PodcastTranscriber audioUrl={selectedEp.audio} />
+                        {/* PodcastTranscriber con REF para activación automática */}
+                        <PodcastTranscriber 
+                          ref={transcriberRef}
+                          audioUrl={selectedEp.audio} 
+                        />
                       </div>
                     </div>
                   ) : (
@@ -315,6 +332,7 @@ function Episodios() {
               </div>
             </div>
 
+            {/* Panel de Ficha Técnica */}
             <div className="bg-white/30 backdrop-blur-xl rounded-3xl border-2 border-white/70 shadow-xl overflow-hidden">
               <div className="p-6 border-b-2 border-white/70">
                 <h2 className="text-lg font-semibold text-gray-800">
@@ -336,7 +354,6 @@ function Episodios() {
                       )}
                     </div>
 
-                    
                     {selectedEp.pelicula.datosCuriosos && (
                       <div>
                         <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -353,7 +370,6 @@ function Episodios() {
                       </div>
                     )}
 
-                  
                     <div className="pt-4 border-t-2 border-white/70">
                       <audio controls >
                         <source src={selectedEp.audio} type="audio/mpeg" />
