@@ -87,7 +87,7 @@ export default function Home() {
             className="col-span-2 bg-gray-500 rounded-2xl p-6"
           >
 
-            <h3 className="font-semibold mb-2">
+            <h3 className="font-semibold mb-2 text-gray-200">
               Sobre el nuestro podcast
             </h3>
 
