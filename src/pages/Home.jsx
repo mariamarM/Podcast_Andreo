@@ -123,6 +123,8 @@ export default function Home() {
           <p className="text-gray-500 mt-4">
             Ya puedes escuchar la nueva temporada en todas las plataformas.
           </p>
+
+          
         </div>
       </div>
     </div>
