@@ -14,7 +14,6 @@ const PodcastTranscriber = forwardRef(({ audioUrl }, ref) => {
   const audioRef = useRef(null);
   const pollingIntervalRef = useRef(null);
 
-  // EXPONER la función startTranscription al componente padre
   useImperativeHandle(ref, () => ({
     startTranscription: handleTranscribe
   }));
@@ -36,9 +35,8 @@ const PodcastTranscriber = forwardRef(({ audioUrl }, ref) => {
         ? audioUrl 
         : `${baseUrl}${audioUrl}`;
       
-      console.log('📢 Cargando audio desde:', fullAudioUrl);
+      console.log(' Cargando audio desde:', fullAudioUrl);
 
-      // Obtener el archivo de audio como blob
       const audioFileResponse = await fetch(fullAudioUrl);
       if (!audioFileResponse.ok) {
         throw new Error(`No se pudo cargar el audio: ${audioFileResponse.status}`);
