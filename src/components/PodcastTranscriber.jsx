@@ -69,6 +69,7 @@ const PodcastTranscriber = forwardRef(({ audioUrl }, ref) => {
           audio_url: uploadedAudioUrl,
           language_code: 'es',
           punctuate: true,
+          auto_chapters: false,
           format_text: true,
           speaker_labels: true,
           speech_models: [ 'universal-2','universal-3-pro'],
@@ -98,23 +99,32 @@ const PodcastTranscriber = forwardRef(({ audioUrl }, ref) => {
           const { status, text, words, error: transcriptError } = pollingResponse.data;
 
           if (status === 'completed') {
-            clearInterval(pollInterval);
-            setTranscript(text);
-            
-            if (words) {
-              const subs = words.map((word, index) => ({
-                id: index,
-                text: word.text,
-                start: word.start / 1000,
-                end: word.end / 1000
-              }));
-              setSubtitles(subs);
-            }
-            
-            setIsTranscribing(false);
-            setProgress(100);
-            
-          } else if (status === 'error') {
+  clearInterval(pollInterval);
+  setTranscript(text);
+
+  // 🔥 NUEVA LLAMADA para obtener frases
+  const sentencesResponse = await axios.get(
+    `https://api.assemblyai.com/v2/transcript/${transcriptId}/sentences`,
+    {
+      headers: { authorization: ASSEMBLYAI_API_KEY }
+    }
+  );
+
+  const sentences = sentencesResponse.data.sentences;
+
+  if (sentences) {
+    const subs = sentences.map((sentence, index) => ({
+      id: index,
+      text: sentence.text,
+      start: sentence.start / 1000,
+      end: sentence.end / 1000
+    }));
+    setSubtitles(subs);
+  }
+
+  setIsTranscribing(false);
+  setProgress(100);
+} else if (status === 'error') {
             clearInterval(pollInterval);
             setIsTranscribing(false);
             setError(`Error en transcripción: ${transcriptError}`);
@@ -144,7 +154,7 @@ const PodcastTranscriber = forwardRef(({ audioUrl }, ref) => {
     }
   };
 
-  // Actualizar subtítulos en tiempo real
+  // actualizar subtítulos en tiempo real
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio || subtitles.length === 0) return;
@@ -161,7 +171,6 @@ const PodcastTranscriber = forwardRef(({ audioUrl }, ref) => {
     return () => audio.removeEventListener('timeupdate', updateSubtitle);
   }, [subtitles]);
 
-  // Limpiar intervalo al desmontar
   useEffect(() => {
     return () => {
       if (pollingIntervalRef.current) {
@@ -218,30 +227,20 @@ const PodcastTranscriber = forwardRef(({ audioUrl }, ref) => {
         </div>
       )}
 
-      {/* Área de transcripción */}
       <div className="p-5">
         <div className="min-h-[300px] max-h-[400px] overflow-y-auto bg-gray-50/50 rounded-2xl p-5 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
           
-         
-          {currentSubtitle && (
-            <div className="mb-4 p-3 bg-gradient-to-r from-naranja/5 to-lila/5 rounded-xl border border-gray-200/50">
-              <p className="text-sm text-gray-500 mb-1">Ahora:</p>
-              <p className="text-base font-medium text-transparent bg-clip-text bg-gradient-to-r from-naranja to-lila">
-                {currentSubtitle}
-              </p>
-            </div>
-          )}
-
-           : (
-            <div className="h-full flex flex-col items-center justify-center text-center py-12">
-              <svg className="w-16 h-16 text-gray-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-              <p className="text-gray-400 font-light">
-                {isTranscribing ? 'Generando transcripción...' : 'Activa la transcripción para comenzar'}
-              </p>
-            </div>
-          )
+{currentSubtitle ? (
+  <p className="text-[35px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-naranja to-lila leading-tight">
+    {currentSubtitle}
+  </p>
+) : isTranscribing ? (
+  <div className="h-full flex items-center justify-center">
+    <p className="text-gray-400 font-light">
+      Generando transcripción...
+    </p>
+  </div>
+) : null}
         </div>
       </div>
     </div>

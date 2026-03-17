@@ -76,7 +76,6 @@ const temporadas = {
 // COMPONENTE DE BLOBS CON MOVIMIENTO MEJORADO
 const LavaLampBlobs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none">
-    {/* Blob 1 - Morado (se mueve izquierda-derecha) */}
     <div 
       className="absolute -top-20 -right-20 w-[600px] h-[800px] md:w-[800px] md:h-[1000px] opacity-4"
       style={{
@@ -87,7 +86,6 @@ const LavaLampBlobs = () => (
       }}
     />
     
-    {/* Blob 2 - Naranja (se mueve derecha-izquierda) */}
     <div 
       className="absolute -bottom-20 -left-20 w-[500px] h-[700px] md:w-[700px] md:h-[900px] opacity-3"
       style={{
@@ -98,7 +96,6 @@ const LavaLampBlobs = () => (
       }}
     />
     
-    {/* Blob 3 - Morado claro (movimiento diagonal) */}
     <div 
       className="absolute top-1/3 left-1/4 w-[400px] h-[600px] opacity-3"
       style={{
@@ -109,7 +106,6 @@ const LavaLampBlobs = () => (
       }}
     />
     
-    {/* Blob 4 - Naranja claro (movimiento circular grande) */}
     <div 
       className="absolute bottom-1/3 right-1/4 w-[300px] h-[500px] opacity-4"
       style={{
@@ -127,7 +123,6 @@ function Episodios() {
   const [temporadaActiva, setTemporadaActiva] = useState('temp1');
   const [showTranscriber, setShowTranscriber] = useState(false);
   
-  // Referencia para el componente PodcastTranscriber
   const transcriberRef = useRef();
 
   const handleSelectEpisodio = (episodio) => {
@@ -135,10 +130,8 @@ function Episodios() {
     setShowTranscriber(false);
   };
 
-  // Función para activar transcripción AUTOMÁTICAMENTE
   const handleActivarTranscripcion = () => {
     setShowTranscriber(true);
-    // Pequeño timeout para asegurar que el componente se montó
     setTimeout(() => {
       if (transcriberRef.current) {
         transcriberRef.current.startTranscription();
@@ -168,7 +161,6 @@ function Episodios() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           
-          {/* COLUMNA IZQUIERDA - LISTA DE EPISODIOS */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -370,11 +362,6 @@ function Episodios() {
                       </div>
                     )}
 
-                    <div className="pt-4 border-t-2 border-white/70">
-                      <audio controls >
-                        <source src={selectedEp.audio} type="audio/mpeg" />
-                      </audio>
-                    </div>
                   </div>
                 ) : (
                   <div className="py-16 text-center">
