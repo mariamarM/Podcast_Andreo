@@ -8,7 +8,6 @@ export default function ScrollImages() {
   const images = [img1, img2];
   const [index, setIndex] = useState(0);
 
-  // CAMBIO DE IMAGEN CON SCROLL
   useEffect(() => {
 
     const handleScroll = () => {
@@ -23,7 +22,6 @@ export default function ScrollImages() {
 
   }, []);
 
-  // TRAIL DEL CURSOR EN TODA LA PANTALLA
   useEffect(() => {
 
     const handleMove = (e) => {

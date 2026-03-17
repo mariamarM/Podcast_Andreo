@@ -102,7 +102,7 @@ const PodcastTranscriber = forwardRef(({ audioUrl }, ref) => {
   clearInterval(pollInterval);
   setTranscript(text);
 
-  // 🔥 NUEVA LLAMADA para obtener frases
+  // una vez ya cargado cpmo el audio entero llama al endpoint de las frases para obtener los timestamps y printarlas
   const sentencesResponse = await axios.get(
     `https://api.assemblyai.com/v2/transcript/${transcriptId}/sentences`,
     {

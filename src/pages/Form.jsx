@@ -1,38 +1,93 @@
-function Form() {
-
+export default function Form() {
   return (
+    <div className="bg-purple-100 p-8 flex justify-center items-start">
+      <div className="w-full max-w-[2000px] grid lg:grid-cols-2 gap-8">
+        <div className="bg-white p-8 rounded-2xl shadow-lg flex flex-col">
+          <h2 className="text-4xl font-bold mb-4">Aporta tu idea!</h2>
+          <p className="text-gray-700 mb-8">
+            Como pagina colaborativa con el publico nuestro contenido resume la
+            tecnologia y el mundo del cine pasando por teorias y actualidad sobre este mundo. Si tienes una idea para un episodio o quieres compartir tu opinión, no dudes en contactarnos a través de este formulario.
+          </p>
 
-    <div className="flex justify-center items-center min-h-screen">
-      <h1 className="text-3xl font-bold mb-4">Contacto</h1>
-      <p className="mb-8 text-center">Si tienes alguna pregunta o comentario, no dudes en contactarnos.</p>
-      <form className="flex flex-col gap-4 w-96">
+          <form className="grid grid-cols-1 gap-6">
+            <div className="flex flex-col">
+              <label className="text-xs font-semibold mb-1 uppercase">
+                Name
+              </label>
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+            </div>
 
-        <input
-          type="text"
-          placeholder="Nombre"
-          className="border p-3 rounded-lg"
-        />
+            <div className="flex flex-col">
+              <label className="text-xs font-semibold mb-1 uppercase">
+                Mail
+              </label>
+              <input
+                type="email"
+                placeholder="you@example.com"
+                className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+            </div>
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="border p-3 rounded-lg"
-        />
+            <div className="flex flex-col">
+              <label className="text-xs font-semibold mb-1 uppercase">
+                Message
+              </label>
+              <textarea
+                placeholder="Write your message..."
+                rows={6}
+                className="border border-gray-300 rounded-lg p-3 resize-none focus:outline-none focus:ring-2 focus:ring-purple-400"
+              ></textarea>
+            </div>
 
-        <textarea
-          placeholder="Mensaje"
-          className="border p-3 rounded-lg"
-        />
+            <button className="bg-purple-500 text-white font-semibold py-3 rounded-lg hover:bg-purple-600 transition">
+              Send
+            </button>
+          </form>
+        </div>
 
-        <button className="bg-naranja text-white p-3 rounded-lg">
-          Enviar
-        </button>
+        {/* Columna derecha */}
+        <div className="flex flex-col gap-6">
+          {/* Video arriba */}
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <video
+              src="/multimedia/natural.mp4"
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-cover rounded-2xl"
+            />
+          </div>
 
-      </form>
-
+          {/* Datos de contacto abajo */}
+          <div className="bg-white p-6 rounded-2xl shadow-lg">
+            <h3 className="text-xl font-semibold mb-4">Contact Info</h3>
+            <div className="space-y-4 text-gray-700">
+              <div className="flex justify-between items-center">
+                <span className="bg-gray-200 px-3 py-1 rounded-full text-sm font-semibold">
+                  Address
+                </span>
+                <span>C/Monlau 123, Barcelona, España</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="bg-gray-200 px-3 py-1 rounded-full text-sm font-semibold">
+                  Mail
+                </span>
+                <span>info@pockertmovie.es</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="bg-gray-200 px-3 py-1 rounded-full text-sm font-semibold">
+                  Phone
+                </span>
+                <span>+34 600 123 456</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-  )
+  );
 }
-
-export default Form
