@@ -3,7 +3,7 @@ export default function Form() {
     <div className="bg-purple-100 p-8 flex justify-center items-start">
       <div className="w-full max-w-[2000px] grid lg:grid-cols-2 gap-8">
         <div className="bg-white p-8 rounded-2xl shadow-lg flex flex-col">
-          <h2 className="text-4xl font-bold mb-4">Aporta tu idea!</h2>
+          <h2 className="text-4xl font-bold mb-4">PocketMovie necesita de tu aportación!</h2>
           <p className="text-gray-700 mb-8">
             Como pagina colaborativa con el publico nuestro contenido resume la
             tecnologia y el mundo del cine pasando por teorias y actualidad sobre este mundo. Si tienes una idea para un episodio o quieres compartir tu opinión, no dudes en contactarnos a través de este formulario.

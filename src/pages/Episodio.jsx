@@ -37,15 +37,11 @@ const temporadas = {
     episodios: [
       {
         id: 4,
-        titulo: "Mi Pobre Angelito (1990) - Análisis",
+        titulo: "La evolución del cine de ciencia ficción",
         duracion: "1h 20min",
         audio: "/multimedia/audio/ep2.mp3",
-        invitados: ["Champi", "Invitado Especial"],
-        pelicula: {
-          titulo: "Mi Pobre Angelito",
-          año: 1990,
-          director: "Chris Columbus",
-        },
+        datosCuriosos:
+          "El cine de ciencia ficción ha evolucionado significativamente desde sus inicios, abordando temas como la tecnología, el espacio y el tiempo. A lo largo de las décadas, ha incorporado avances tecnológicos y ha explorado nuevas narrativas que reflejan las preocupaciones sociales y culturales de cada época.",
       },
     ],
   },
@@ -219,11 +215,6 @@ function Episodios() {
                             <span className="text-sm text-gray-600">
                               {ep.duracion}
                             </span>
-                            {ep.invitados && (
-                              <span className="text-sm text-gray-500">
-                                · {ep.invitados.length} participantes
-                              </span>
-                            )}
                           </div>
                         </div>
                       </div>
@@ -339,31 +330,32 @@ function Episodios() {
                   <div className="space-y-6">
                     <div>
                       <h3 className="text-xl font-semibold text-gray-800">
-                        {selectedEp.pelicula.titulo}
+                        {selectedEp.titulo}
                       </h3>
-                      {selectedEp.pelicula.año && (
+                      {selectedEp.año && (
                         <p className="text-sm text-gray-600 mt-1 font-light">
-                          {selectedEp.pelicula.año}
+                          {selectedEp.año}
                         </p>
                       )}
                     </div>
 
-                    {selectedEp.pelicula.datosCuriosos && (
+                    {selectedEp.datosCuriosos && (
                       <div>
                         <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Datos curiosos
                         </span>
-                        <ul className="mt-2 space-y-2">
-                          {selectedEp.pelicula.datosCuriosos.map((dato, i) => (
-                            <li
-                              key={i}
-                              className="text-sm text-gray-600 font-light flex items-start gap-2"
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-naranja to-lila mt-1.5 flex-shrink-0 border border-white/70" />
-                              {dato}
-                            </li>
-                          ))}
-                        </ul>
+                        {(Array.isArray(selectedEp.datosCuriosos)
+                          ? selectedEp.datosCuriosos
+                          : [selectedEp.datosCuriosos]
+                        ).map((dato, i) => (
+                          <p
+                            key={i}
+                            className="text-sm text-gray-600 font-light flex items-start gap-2"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-naranja to-lila mt-1.5 flex-shrink-0 border border-white/70" />
+                            {dato}
+                          </p>
+                        ))}
                       </div>
                     )}
                   </div>
