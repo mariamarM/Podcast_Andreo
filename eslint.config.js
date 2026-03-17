@@ -22,8 +22,14 @@ export default defineConfig([
         sourceType: 'module',
       },
     },
-    rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      settings: {
+      react: {
+        version: 'detect', // 👈 IMPORTANTE
+      },
     },
+    'no-unused-vars': [
+  'error',
+  { varsIgnorePattern: '^[A-Z_]|^motion$|^AnimatePresence$' }
+]
   },
 ])
