@@ -96,7 +96,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             <EpisodeCard
-              title="Porque no se vuelve el Tecnicholor"
+              title="Porque no se puede volver el Tecnicholor"
               description="Porque nadie puede recrear el Tennicholor y es imposible grabar con esa calidad en la actualidad."
               image="/multimedia/popcorn.png"
             />

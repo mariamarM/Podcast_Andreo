@@ -8,7 +8,7 @@ const temporadas = {
     episodios: [
       {
         id: 1,
-        titulo: "Porque no se vuelve el Tecnicholor",
+        titulo: "Porque no se puede volver el Tecnicholor",
         duracion: "1h 24min",
         audio: "/multimedia/audio/P1-SoloEnCasa.mp3",
         datosCuriosos:
@@ -222,7 +222,7 @@ function Episodios() {
                       {selectedEp?.id === ep.id && (
                         <motion.div
                           layoutId="activeIndicator"
-                          className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-naranja to-lila rounded-full border border-white/70 shadow-lg"
+                          className="absolute left-0 top-1/3 -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-naranja to-lila rounded-full border border-white/70 shadow-lg"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                         />
@@ -267,7 +267,6 @@ function Episodios() {
                   showTranscriber ? (
                     <div className="space-y-4">
                       <div className="bg-white/40 backdrop-blur-sm rounded-2xl border-2 border-white/70 p-4">
-                        {/* PodcastTranscriber con REF para activación automática */}
                         <PodcastTranscriber
                           ref={transcriberRef}
                           audioUrl={selectedEp.audio}
@@ -321,7 +320,7 @@ function Episodios() {
             <div className="bg-white/30 backdrop-blur-xl rounded-3xl border-2 border-white/70 shadow-xl overflow-hidden">
               <div className="p-6 border-b-2 border-white/70">
                 <h2 className="text-lg font-semibold text-gray-800">
-                  Ficha técnica
+                  Sobre el capitulo de hoy
                 </h2>
               </div>
 
@@ -341,9 +340,7 @@ function Episodios() {
 
                     {selectedEp.datosCuriosos && (
                       <div>
-                        <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Datos curiosos
-                        </span>
+                        
                         {(Array.isArray(selectedEp.datosCuriosos)
                           ? selectedEp.datosCuriosos
                           : [selectedEp.datosCuriosos]
@@ -352,8 +349,7 @@ function Episodios() {
                             key={i}
                             className="text-sm text-gray-600 font-light flex items-start gap-2"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-naranja to-lila mt-1.5 flex-shrink-0 border border-white/70" />
-                            {dato}
+                             {dato}
                           </p>
                         ))}
                       </div>
