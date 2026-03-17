@@ -12,7 +12,7 @@ export default function Form() {
           <form className="grid grid-cols-1 gap-6">
             <div className="flex flex-col">
               <label className="text-xs font-semibold mb-1 uppercase">
-                Name
+                Nombre
               </label>
               <input
                 type="text"
@@ -23,7 +23,7 @@ export default function Form() {
 
             <div className="flex flex-col">
               <label className="text-xs font-semibold mb-1 uppercase">
-                Mail
+                Correo electrónico
               </label>
               <input
                 type="email"
@@ -34,7 +34,7 @@ export default function Form() {
 
             <div className="flex flex-col">
               <label className="text-xs font-semibold mb-1 uppercase">
-                Message
+                Mensaje 
               </label>
               <textarea
                 placeholder="Write your message..."
@@ -44,14 +44,12 @@ export default function Form() {
             </div>
 
             <button className="bg-purple-500 text-white font-semibold py-3 rounded-lg hover:bg-purple-600 transition">
-              Send
+              Enviar
             </button>
           </form>
         </div>
 
-        {/* Columna derecha */}
         <div className="flex flex-col gap-6">
-          {/* Video arriba */}
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <video
               src="/multimedia/natural.mp4"
@@ -62,25 +60,24 @@ export default function Form() {
             />
           </div>
 
-          {/* Datos de contacto abajo */}
           <div className="bg-white p-6 rounded-2xl shadow-lg">
             <h3 className="text-xl font-semibold mb-4">Contact Info</h3>
             <div className="space-y-4 text-gray-700">
               <div className="flex justify-between items-center">
                 <span className="bg-gray-200 px-3 py-1 rounded-full text-sm font-semibold">
-                  Address
+                  Direccion 
                 </span>
                 <span>C/Monlau 123, Barcelona, España</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="bg-gray-200 px-3 py-1 rounded-full text-sm font-semibold">
-                  Mail
+                  Correo
                 </span>
                 <span>info@pockertmovie.es</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="bg-gray-200 px-3 py-1 rounded-full text-sm font-semibold">
-                  Phone
+                  Movil
                 </span>
                 <span>+34 600 123 456</span>
               </div>

@@ -126,20 +126,20 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
 
             <EpisodeCard
-              title="El futuro de los videojuegos"
-              description="Lorem ipsum dolor sit amet"
+              title="Porque no se vuelve el Tecnicholor"
+              description="Porque nadie puede recrear el Tennicholor y es imposible grabar con esa calidad en la actualidad."
               image="/multimedia/popcorn.png"
             />
 
             <EpisodeCard
-              title="Las mejores series"
-              description="Lorem ipsum dolor sit amet"
+              title="VR vs AR"
+              description="Comparando las tecnologías de realidad virtual y aumentada."
               image="/multimedia/popcorn.png"
             />
 
             <EpisodeCard
               title="Cultura digital"
-              description="Lorem ipsum dolor sit amet"
+              description="Cultura segun como se conoce hoy dia."
               image="/multimedia/popcorn.png"
             />
 
@@ -147,7 +147,6 @@ export default function Home() {
 
         </div>
 
-        {/* HERO FINAL */}
 
         <div className="mt-24 text-center">
 

@@ -7,7 +7,7 @@ import Contacto from "./pages/Form";
 function AppWrapper() {
   const location = useLocation();
 
-  const containerBg = location.pathname === "/contacto" ? "bg-purple-100" : "bg-gray-200";
+  const containerBg = location.pathname === "/contacto" ? "bg-purple-100" : "bg-gray-100";
 
   return (
     <div className="h-[clamp(954px,80vh,900px)] w-full flex justify-center p-6">
