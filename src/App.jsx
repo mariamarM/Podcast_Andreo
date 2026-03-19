@@ -12,10 +12,10 @@ const containerBg =
   location.pathname === "/produccion"
     ? "bg-[url('/src/assets/img/flores.gif')] bg-fixed bg-contain bg-center "
     : location.pathname === "/contacto"
-    ? "bg-purple-100"
-    : "bg-gray-100";
+    ? "bg-purple-200"
+    : "bg-gray-200";
   return (
-    <div className="h-[clamp(954px,80vh,900px)] w-full flex justify-center p-6">
+    <div className="h-[clamp(900px,80vh,900px)] w-full flex justify-center p-6">
       <div className={`w-full max-w-[2000px] ${containerBg} backdrop-blur-xl rounded-3xl shadow-xl flex flex-col`}  >
         
         <Navbar />

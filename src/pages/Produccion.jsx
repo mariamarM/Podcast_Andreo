@@ -5,21 +5,14 @@ export default function Produccion() {
     <div className="relative min-h-screen overflow-hidden flex justify-center items-start p-8">
       <div
         className="
-        relative w-full max-w-[1600px] p-6 rounded-[40px]
+        relative w-full max-w-[1600px] p-10 rounded-[30px]
         backdrop-blur-2xl
         bg-white/40
-        p-10
         border border-white/20
-        shadow-[0_8px_32px_rgba(0,0,0,0.15)]
+        shadow-[0_8px_32px_rgba(0,0,0,0.15)] mt-[-30px]
       "
       >
-        <div
-          className="
-          pointer-events-none absolute inset-0 rounded-[40px]
-          border border-white/40
-          bg-gradient-to-br from-white/20 via-transparent to-white/10
-        "
-        />
+        
 
         <div className="grid lg:grid-cols-2 gap-8 relative z-10">
           <div className="flex flex-col gap-[12%]">

@@ -1,6 +1,6 @@
 export default function Form() {
   return (
-    <div className="bg-purple-100 p-8 flex justify-center items-start">
+    <div className="bg-purple-200 p-8 flex justify-center items-start">
       <div className="w-full max-w-[2000px] grid lg:grid-cols-2 gap-8">
         <div className="bg-white p-8 rounded-2xl shadow-lg flex flex-col">
           <h2 className="text-4xl font-bold mb-4">Sigue creando contenido con nosotros</h2>
@@ -55,11 +55,11 @@ export default function Form() {
             width="100%"
             height="315px"
               src="/multimedia/natural.mp4"
-              autoPlay
-              muted
-              loop
-              controls
-              className="w-full h-full object-cover rounded-2xl"
+           autoPlay
+  muted
+  loop
+  controls
+              className="w-full h-[315px] object-cover rounded-2xl"
             />
           </div>
 
