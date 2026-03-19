@@ -1,17 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function Navbar() {
-
   return (
-
     <nav className="flex justify-between items-center px-8 py-4 m-4 bg-white rounded-2xl shadow-sm">
-
-      <h1 className="text-2xl font-bold text-naranja">
-        Maria Andreo
-      </h1>
+      <h1 className="text-2xl font-bold text-naranja">Maria Andreo</h1>
 
       <div className="flex gap-6 text-gray-600">
-
         <Link to="/" className="hover:text-black transition">
           Home
         </Link>
@@ -23,12 +17,12 @@ function Navbar() {
         <Link to="/contacto" className="hover:text-black transition">
           Participa
         </Link>
-
+        <Link to="/produccion" className="hover:text-black transition">
+          Produccion
+        </Link>
       </div>
-
     </nav>
-
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

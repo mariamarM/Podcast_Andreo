@@ -3,12 +3,17 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Episodios from "./pages/Episodio";
 import Contacto from "./pages/Form";
-
+import Produccion from "./pages/Produccion";
 function AppWrapper() {
   const location = useLocation();
 
-  const containerBg = location.pathname === "/contacto" ? "bg-purple-100" : "bg-gray-100";
-
+  // const containerBg = location.pathname === "/contacto" ? "bg-purple-100" : "bg-gray-100";
+const containerBg =
+  location.pathname === "/produccion"
+    ? "bg-[url('/src/assets/img/flores.gif')] bg-fixed bg-contain bg-center "
+    : location.pathname === "/contacto"
+    ? "bg-purple-100"
+    : "bg-gray-100";
   return (
     <div className="h-[clamp(954px,80vh,900px)] w-full flex justify-center p-6">
       <div className={`w-full max-w-[2000px] ${containerBg} backdrop-blur-xl rounded-3xl shadow-xl flex flex-col`}  >
@@ -20,6 +25,8 @@ function AppWrapper() {
             <Route path="/" element={<Home />} />
             <Route path="/episodios" element={<Episodios />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/produccion" element={<Produccion />} />
+
           </Routes>
         </main>
       </div>
