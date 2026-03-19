@@ -58,6 +58,7 @@ export default function Form() {
               autoPlay
               muted
               loop
+              controls={false}
               className="w-full h-full object-cover rounded-2xl"
             />
           </div>
