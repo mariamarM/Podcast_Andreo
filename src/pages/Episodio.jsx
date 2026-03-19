@@ -10,7 +10,7 @@ const temporadas = {
         id: 1,
         titulo: "Porque no se puede volver el Tecnicholor",
         duracion: "1h 24min",
-        audio: "/multimedia/audio/P1-SoloEnCasa.mp3",
+        audio: "/multimedia/audio/1x1.wav",
         datosCuriosos:
           "El Technicolor era un proceso de filmación en color que se utilizó ampliamente en Hollywood desde los años 30 hasta los 50. Sin embargo, el proceso era extremadamente costoso y complicado, lo que llevó a su declive a medida que surgieron tecnologías más baratas y fáciles de usar. Además, el estilo visual del Technicolor, con sus colores saturados y vibrantes, no encajaba con las tendencias cinematográficas posteriores, lo que contribuyó a que no se volviera a utilizar en la actualidad.",
       },
@@ -18,7 +18,7 @@ const temporadas = {
         id: 2,
         titulo: "VR vs AR",
         duracion: "1h 32min",
-        audio: "/multimedia/audio/P2-SoloEnCasa2.mp3",
+        audio: "/multimedia/audio/1x2.wav",
         datosCuriosos:
           "La realidad virtual (VR) y la realidad aumentada (AR) son dos tecnologías relacionadas pero distintas. La VR sumerge completamente al usuario en un entorno digital generado por computadora, mientras que la AR superpone elementos digitales en el mundo real a través de dispositivos como smartphones o gafas inteligentes. Aunque ambas tecnologías tienen aplicaciones en entretenimiento, educación y otras áreas, la VR tiende a ser más inmersiva, mientras que la AR es más accesible y se integra mejor con el entorno físico del usuario.",
       },
@@ -26,7 +26,7 @@ const temporadas = {
         id: 3,
         titulo: "Cultura digital",
         duracion: "1h 15min",
-        audio: "/multimedia/audio/P3-FenomenoSoloEnCasa.mp3",
+        audio: "/multimedia/audio/1x3.wav",
         datosCuriosos:
           "La cultura digital se refiere a las formas en que las tecnologías de la información y la comunicación influyen en la vida social, cultural y económica. Esta cultura ha transformado la manera en que las personas se comunican, acceden a la información y participan en la sociedad.",
       },
@@ -39,7 +39,7 @@ const temporadas = {
         id: 4,
         titulo: "La evolución del cine de ciencia ficción",
         duracion: "1h 20min",
-        audio: "/multimedia/audio/ep2.mp3",
+        audio: "/multimedia/audio/2x1.wav",
         datosCuriosos:
           "El cine de ciencia ficción ha evolucionado significativamente desde sus inicios, abordando temas como la tecnología, el espacio y el tiempo. A lo largo de las décadas, ha incorporado avances tecnológicos y ha explorado nuevas narrativas que reflejan las preocupaciones sociales y culturales de cada época.",
       },
