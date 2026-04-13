@@ -1,4 +1,4 @@
-import naturalvideo from "../multimedia/natural.mp4";
+import naturalvideo from "/multimedia/natural.mp4";
 
 export default function Form() {
   return (
