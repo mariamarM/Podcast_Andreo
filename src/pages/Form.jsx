@@ -1,4 +1,4 @@
-
+import naturalvideo from "../multimedia/natural.mp4";
 export default function Form() {
   return (
     <div className="bg-purple-200 p-8 flex justify-center items-start">
@@ -55,7 +55,8 @@ export default function Form() {
             <video
             width="100%"
             height="315px"
-              src="/multimedia/natural.mp4"
+            src={naturalvideo}
+              // src="/multimedia/natural.mp4"
            autoPlay
   muted
   loop
