@@ -1,4 +1,3 @@
-import naturalVideo from "/multimedia/natural.mp4";
 
 export default function Form() {
   return (
@@ -56,11 +55,11 @@ export default function Form() {
             <video
             width="100%"
             height="315px"
-              src={naturalVideo}
+              src="/multimedia/natural.mp4"
            autoPlay
   muted
   loop
-  controls
+  controls={false}
               className="w-full h-[315px] object-cover rounded-2xl"
             />
           </div>
