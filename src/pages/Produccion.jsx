@@ -12,8 +12,6 @@ export default function Produccion() {
         shadow-[0_8px_32px_rgba(0,0,0,0.15)] mt-[-30px]
       "
       >
-        
-
         <div className="grid lg:grid-cols-2 gap-8 relative z-10">
           <div className="flex flex-col gap-[12%]">
             <div>
@@ -58,20 +56,24 @@ export default function Produccion() {
               target="_blank"
               className="col-span-2 relative backdrop-blur-3xl bg-white/30 border border-white/40 rounded-3xl p-6 shadow-xl flex flex-col justify-center hover:scale-[1.02] transition group"
             >
-              <h3 className="text-2xl text-gray-700 font-semibold mb-2">Ocenaudio</h3>
+              <h3 className="text-2xl text-gray-700 font-semibold mb-2">
+                Ocenaudio
+              </h3>
               <p className="text-gray-700">Edición de audio</p>
 
               {/* flecha */}
-             <span className="
+              <span
+                className="
   absolute bottom-4 right-4
   w-20 h-20 flex items-center justify-center
   rounded-full
   group-hover:scale-110
   group-hover:translate-x-1 group-hover:-translate-y-1
   transition
-">
-  <i className="fa-solid fa-arrow-up text-gray-700 text-[40px]  rotate-45"></i>
-</span>
+"
+              >
+                <i className="fa-solid fa-arrow-up text-gray-700 text-[40px]  rotate-45"></i>
+              </span>
             </a>
 
             {/* DAVINCI */}
@@ -80,18 +82,22 @@ export default function Produccion() {
               target="_blank"
               className="relative backdrop-blur-3xl bg-white/30 border border-white/40 rounded-3xl p-6 shadow-xl flex flex-col justify-center hover:scale-[1.02] transition group"
             >
-              <h3 className="text-xl text-gray-700 font-semibold mb-2">DaVinci</h3>
+              <h3 className="text-xl text-gray-700 font-semibold mb-2">
+                DaVinci
+              </h3>
               <p className="text-gray-700">Edición de vídeo</p>
-          <span className="
+              <span
+                className="
   absolute bottom-4 right-4
   w-20 h-20 flex items-center justify-center
   rounded-full
   group-hover:scale-110
   group-hover:translate-x-1 group-hover:-translate-y-1
   transition
-">
-  <i className="fa-solid fa-arrow-up text-naranja text-[40px]  rotate-45"></i>
-</span>
+"
+              >
+                <i className="fa-solid fa-arrow-up text-naranja text-[40px]  rotate-45"></i>
+              </span>
             </a>
 
             <div className="relative backdrop-blur-3xl bg-white/30 border border-white/40 rounded-3xl p-6 shadow-xl flex flex-col justify-center">
@@ -104,19 +110,23 @@ export default function Produccion() {
               target="_blank"
               className="col-span-2 relative backdrop-blur-3xl bg-white/30 border border-white/40 rounded-3xl p-6 shadow-xl flex flex-col justify-center hover:scale-[1.02] transition group"
             >
-              <h3 className="text-xl text-gray-700 font-semibold mb-2">Recursos</h3>
+              <h3 className="text-xl text-gray-700 font-semibold mb-2">
+                Recursos
+              </h3>
               <p className="text-gray-700">Pexels + Lummi</p>
 
-                       <span className="
+              <span
+                className="
   absolute bottom-4 right-4
   w-20 h-20 flex items-center justify-center
   rounded-full
   group-hover:scale-110
   group-hover:translate-x-1 group-hover:-translate-y-1
   transition
-">
-  <i className="fa-solid fa-arrow-up text-lilac text-[40px] rotate-45"></i>
-</span>
+"
+              >
+                <i className="fa-solid fa-arrow-up text-lilac text-[40px] rotate-45"></i>
+              </span>
             </a>
           </div>
         </div>
