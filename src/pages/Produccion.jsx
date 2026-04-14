@@ -94,13 +94,11 @@ export default function Produccion() {
 </span>
             </a>
 
-            {/* IPHONE (SIN LINK) */}
             <div className="relative backdrop-blur-3xl bg-white/30 border border-white/40 rounded-3xl p-6 shadow-xl flex flex-col justify-center">
               <h3 className="text-xl font-semibold mb-2">iPhone</h3>
               <p className="text-gray-700">Grabación</p>
             </div>
 
-            {/* RECURSOS */}
             <a
               href="https://www.pexels.com/"
               target="_blank"

@@ -9,6 +9,7 @@ export default function EpisodeCard({title, description, image}) {
       
       <img
         src={image}
+        alt={`Imagen del episodio ${title}`}
         className="rounded-xl w-24 h-24 object-cover flex-shrink-0 relative z-10"
       />
       

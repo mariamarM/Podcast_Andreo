@@ -20,7 +20,10 @@ function Navbar() {
 
       {/* Mobile hamburger */}
       <div className="md:hidden flex items-center">
-        <button onClick={() => setIsOpen(!isOpen)}>
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+        >
           {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
         </button>
       </div>
