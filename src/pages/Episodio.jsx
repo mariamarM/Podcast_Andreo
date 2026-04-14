@@ -250,6 +250,7 @@ function Episodios() {
                 <h2 className="text-lg font-semibold text-gray-800">Transcripción</h2>
                 {selectedEp && (
                   <button
+                  aria-label="Activar transcripción"
                     onClick={handleActivarTranscripcion}
                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm border-2 ${
                       showTranscriber

@@ -31,6 +31,7 @@ export default function Form() {
                 type="email"
                 placeholder="you@example.com"
                 className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                aria-label="Correo electrónico"
               />
             </div>
 
@@ -39,13 +40,14 @@ export default function Form() {
                 Mensaje 
               </label>
               <textarea
+              aria-label="Escribe tu mensaje aquí"
                 placeholder="Write your message..."
                 rows={6}
                 className="border border-gray-300 rounded-lg p-3 resize-none focus:outline-none focus:ring-2 focus:ring-purple-400"
               ></textarea>
             </div>
 
-            <button className="bg-purple-500 text-white font-semibold py-3 rounded-lg hover:bg-purple-600 transition">
+            <button aria-label="Enviar mensaje" className="bg-purple-500 text-white font-semibold py-3 rounded-lg hover:bg-purple-600 transition">
               Enviar
             </button>
           </form>
@@ -60,7 +62,7 @@ export default function Form() {
            autoPlay
   muted
   loop
-  controls={false}
+  controls={true}
               className="w-full h-[315px] object-cover rounded-2xl"
             />
           </div>

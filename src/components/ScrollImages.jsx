@@ -50,7 +50,7 @@ export default function ScrollImages() {
         <motion.img
           key={i}
           src={img}
-          alt=""
+          alt="persona androgina rapada con el pelo nraranja y auriculares"
           className="absolute w-full rounded-2xl"
           initial={{ opacity: 0, left: "-100%" }}
           animate={{
