@@ -20,7 +20,8 @@ const containerBg =
         
         <Navbar />
 
-        <main className="px-12 py-10 flex-1 overflow-y-auto scrollbar-hide">
+        <main className="px-12 py-10 flex-1 overflow-y-auto scrollbar-hide" id="main">
+          <a href="#main" class="skip-link">Saltar al contenido</a>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/episodios" element={<Episodios />} />

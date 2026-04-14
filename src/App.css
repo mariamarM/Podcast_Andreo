@@ -11,6 +11,14 @@
   will-change: filter;
   transition: filter 300ms;
 }
+.skip-link {
+  position: absolute;
+  top: -40px;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -19,6 +27,10 @@
 }
 button:focus {
   outline: 3px solid blue;
+}
+:focus {
+  outline: 3px solid #f97316; /* visible */
+  outline-offset: 2px;
 }
 @keyframes logo-spin {
   from {

@@ -22,6 +22,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
+          
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[110px] font-bold text-gray-700 leading-none tracking-tight">
             POCKETMOVIE
           </h1>
