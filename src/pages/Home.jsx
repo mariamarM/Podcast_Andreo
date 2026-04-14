@@ -2,13 +2,19 @@ import { motion } from "framer-motion";
 import ParallaxBlob from "../components/ParallaxBlob";
 import EpisodeCard from "../components/EpisodeCard";
 import ScrollImages from "../components/ScrollImages";
-
+import PDFDoc from "../components/InformPDF";
 export default function Home() {
   return (
     <div className="py-16">
+
       {/* Blobs */}
       <ParallaxBlob color="bg-lila" top="top-20" left="left-20" speed={0.65} />
-      <ParallaxBlob color="bg-naranja" top="top-60" left="right-20" speed={0.2} />
+      <ParallaxBlob
+        color="bg-naranja"
+        top="top-60"
+        left="right-20"
+        speed={0.2}
+      />
 
       <div className="relative px-4 sm:px-8 md:px-12 lg:px-16">
         <motion.div
@@ -21,7 +27,8 @@ export default function Home() {
           </h1>
 
           <p className="max-w-md text-gray-500 mt-4 text-sm sm:text-base">
-            Plataforma para enviarnos podcasts sobre cine y la tecnologia junto con nosotros.
+            Plataforma para enviarnos podcasts sobre cine y la tecnologia junto
+            con nosotros.
           </p>
         </motion.div>
 
@@ -33,9 +40,12 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="bg-gray-200 rounded-2xl p-6"
           >
-            <h3 className="font-semibold mb-2 text-gray-700">Último episodio</h3>
+            <h3 className="font-semibold mb-2 text-gray-700">
+              Último episodio
+            </h3>
             <p className="text-sm text-gray-500">
-              Sobre porque los videojuegos son la forma de arte más importante del siglo XXI.
+              Sobre porque los videojuegos son la forma de arte más importante
+              del siglo XXI.
             </p>
           </motion.div>
 
@@ -59,9 +69,12 @@ export default function Home() {
             transition={{ delay: 0.5 }}
             className="col-span-1 sm:col-span-2 bg-gray-500 rounded-2xl p-6"
           >
-            <h3 className="font-semibold mb-2 text-gray-200">Sobre el nuestro podcast</h3>
+            <h3 className="font-semibold mb-2 text-gray-200">
+              Sobre el nuestro podcast
+            </h3>
             <p className="text-sm text-gray-200">
-              Hacemos cultura digital, entretenimiento, videojuegos y cine. Cada semana un nuevo episodio disponible en todas las plataformas.
+              Hacemos cultura digital, entretenimiento, videojuegos y cine. Cada
+              semana un nuevo episodio disponible en todas las plataformas.
             </p>
           </motion.div>
 
@@ -110,6 +123,8 @@ export default function Home() {
             Ya puedes escuchar la nueva temporada en todas las plataformas.
           </p>
         </div>
+        <PDFDoc />
+     
       </div>
     </div>
   );
