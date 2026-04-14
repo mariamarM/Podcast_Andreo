@@ -44,13 +44,15 @@ addText("Branch analizada: main");
    addText("Commit final con mejoras de accesibilidad: 0j9i8h7g6f5e4d3c2b1a");
    addText("Historial de commits relacionados con accesibilidad: ");
    doc.AddImage("/screenshotsAccesbility/git.png", "PNG", 10, y, 180, 100);
-   
+
     doc.setFontSize(14);
-    doc.text("Descripcion obligatoria", 10, 80);
+    doc.text("Descripcion obligatoria", 18, 80);
     addText("Se han implementado mejoras significativas en la accesibilidad del proyecto, abordando problemas de contraste, navegación con teclado, etiquetas ARIA y estructura semántica. Estas mejoras garantizan una experiencia más inclusiva para usuarios con discapacidades visuales, auditivas y motoras, cumpliendo con los estándares WCAG 2.1 a nivel AA.");
     
-    
-    
+     doc.setFontSize(14);
+    doc.text("RESUMEN EJECUTIVO", 25, 80);
+    addText("El proyecto ha sido evaluado exhaustivamente para identificar y corregir problemas de accesibilidad, logrando una conformidad significativa con las pautas WCAG 2.1 a nivel AA. Se han implementado mejoras en contraste, navegación con teclado, etiquetas ARIA y estructura semántica, garantizando una experiencia inclusiva para todos los usuarios.");
+    addText("El análisis se basa en las WCAG 2.2 nivel AA. WCAG (Web Content Accessibility Guidelines) son pautas internacionales que establecen criterios técnicos para garantizar accesibilidad digital. ")
     
     doc.save("informe-accesibilidad.pdf");
   };
