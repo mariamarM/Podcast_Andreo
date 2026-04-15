@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <div className="py-16">
 
-      {/* Blobs */}
       <ParallaxBlob color="bg-lila" top="top-20" left="left-20" speed={0.65} />
       <ParallaxBlob
         color="bg-naranja"
@@ -33,7 +32,6 @@ export default function Home() {
           </p>
         </motion.div>
 
-        {/* Grid principal */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -90,7 +88,6 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Episodios destacados */}
         <div className="mt-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-naranja to-lila bg-clip-text text-transparent">
             Episodios destacados
@@ -115,7 +112,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* CTA final */}
         <div className="mt-24 text-center px-4 sm:px-0">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-naranja to-lila bg-clip-text text-transparent">
             NUEVA TEMPORADA YA DISPONIBLE
@@ -124,6 +120,7 @@ export default function Home() {
             Ya puedes escuchar la nueva temporada en todas las plataformas.
           </p>
         </div>
+
         <PDFDoc />
      
       </div>
