@@ -53,7 +53,21 @@ addText("Branch analizada: main");
     doc.text("RESUMEN EJECUTIVO", 25, 80);
     addText("El proyecto ha sido evaluado exhaustivamente para identificar y corregir problemas de accesibilidad, logrando una conformidad significativa con las pautas WCAG 2.1 a nivel AA. Se han implementado mejoras en contraste, navegación con teclado, etiquetas ARIA y estructura semántica, garantizando una experiencia inclusiva para todos los usuarios.");
     addText("El análisis se basa en las WCAG 2.2 nivel AA. WCAG (Web Content Accessibility Guidelines) son pautas internacionales que establecen criterios técnicos para garantizar accesibilidad digital. ")
-    
+     doc.setFontSize(18);
+    doc.text("INTRODUCCION", 25, 80);
+
+    addText("Este documento presenta la auditoría de accesibilidad realizada sobre la webdesarrollada con React. El objetivo del análisis ha sido verificar el cumplimiento delos criterios WCAG 2.2 nivel AA y aplicar las correcciones necesarias para mejorarla accesibilidad de la interfaz.");
+    doc.setFontSize(12);
+    addText("WCAG (Web Content Accessibility Guidelines) son las pautas internacionales queestablecen cómo debe construirse una web para que sea accesible. Estas pautasestán organizadas en principios técnicos y niveles de conformidad.")
+    addText("Nivel AA es el nivel estándar exigido en la mayoría de proyectos profesionales y entornos institucionales.")
+
+    doc.setFontSize(18);
+    doc.text("MARCO CONCEPTUAL", 25, 80);
+    addText("La accesibilidad web se basa en cuatro principios fundamentales conocidos como POUR.");
+    addText("Perceptible: La información debe presentarse de forma que los usuarios puedan percibirla, independientemente de sus capacidades sensoriales.");
+    addText("Operable: Los componentes de la interfaz deben ser operables mediante diferentes métodos de interacción.");
+    addText("Comprensible: La información y el funcionamiento de la interfaz deben ser comprensibles.");
+    addText("Robusto: El contenido debe ser lo suficientemente robusto para ser interpretado por una amplia variedad de tecnologías de asistencia.");
     doc.save("informe-accesibilidad.pdf");
   };
 

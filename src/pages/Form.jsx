@@ -1,6 +1,14 @@
+import { useState } from "react";
 import naturalvideo from "/multimedia/natural.mp4";
 
 export default function Form() {
+  const [formStatus, setFormStatus] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormStatus("Mensaje enviado con éxito. Nos pondremos en contacto contigo pronto.");
+  };
+
   return (
     <div className="bg-purple-200 p-8 flex justify-center items-start">
       <div className="w-full max-w-[2000px] grid lg:grid-cols-2 gap-8">
@@ -11,7 +19,7 @@ export default function Form() {
             tecnologia y el mundo del cine pasando por teorias y actualidad sobre este mundo. Si tienes una idea para un episodio o quieres compartir tu opinión, no dudes en contactarnos a través de este formulario.
           </p>
 
-          <form className="grid grid-cols-1 gap-6">
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
             <div className="flex flex-col">
               <label className="text-xs font-semibold mb-1 uppercase">
                 Nombre
@@ -47,6 +55,11 @@ export default function Form() {
               ></textarea>
             </div>
 
+            {formStatus && (
+              <div aria-live="polite" className="p-3 bg-purple-100 text-purple-800 rounded-lg font-medium">
+                {formStatus}
+              </div>
+            )}
             <button aria-label="Enviar mensaje" className="bg-purple-500 text-white font-semibold py-3 rounded-lg hover:bg-purple-600 transition">
               Enviar
             </button>

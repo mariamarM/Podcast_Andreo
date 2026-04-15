@@ -190,14 +190,14 @@ const PodcastTranscriber = forwardRef(({ audioUrl }, ref) => {
 
         {/* Error */}
         {error && (
-          <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl">
+          <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl" aria-live="assertive">
             <p className="text-sm font-medium text-red-800">❌ {error}</p>
           </div>
         )}
 
         {/* Progreso */}
         {isTranscribing && progress > 0 && (
-          <div className="mt-4">
+          <div className="mt-4" aria-live="polite" >
             <div className="flex justify-between text-xs text-gray-500 mb-1">
               <span>Procesando audio...</span>
               <span>{Math.round(progress)}%</span>
@@ -226,7 +226,7 @@ const PodcastTranscriber = forwardRef(({ audioUrl }, ref) => {
       )}
 
       <div className="p-5">
-        <div className="min-h-[300px] max-h-[400px] overflow-y-auto bg-gray-50/50 rounded-2xl p-5 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+        <div className="min-h-[300px] max-h-[400px] overflow-y-auto bg-gray-50/50 rounded-2xl p-5 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent" aria-live="polite" >
           
 {currentSubtitle ? (
   <p className="text-[35px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-naranja to-lila leading-tight">
